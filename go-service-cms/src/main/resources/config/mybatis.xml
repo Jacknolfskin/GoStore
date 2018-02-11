@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task
+   		http://www.springframework.org/schema/task/spring-task-4.0.xsd
+		http://code.alibabatech.com/schema/dubbo        
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+		
+		
+		<!-- 配置Mybatis 工厂 -->
+		<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+			<!-- 数据源 -->
+			<property name="dataSource" ref="dataSource"/>
+			<!-- 配置Mybatis配置文件所在位置 -->
+			<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		</bean>
+		
+		<!-- 三种： 
+		第一种原始Dao  接口 实现类  Mapper.xml
+		第二种：接口     接口  Mappper.xml     UserDao接口  配置    ProductDao
+		第三种：第二种升级版  扫描方式自动加载Dao接口Mapper 不用一个一个的配置   扫描的包   
+		注意事项：Dao接口及Mapper文件在同一目录 下（包下） 并且 UserDao.java  UserDao.xml  同名
+		-->
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<property name="basePackage" value="cn.itcast.core.dao"/>
+		</bean>
+		
+		
+		
+</beans>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="go-console:war">
+    <output-path>$PROJECT_DIR$/go-console/target</output-path>
+    <root id="archive" name="go-console-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="go-console:war exploded" />
+    </root>
+  </artifact>
+</component>

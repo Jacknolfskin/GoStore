@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="go-service-solr:war">
+    <output-path>$PROJECT_DIR$/go-service-solr/target</output-path>
+    <root id="archive" name="go-service-solr-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="go-service-solr:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task
+   		http://www.springframework.org/schema/task/spring-task-4.0.xsd
+		http://code.alibabatech.com/schema/dubbo        
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+		
+		
+		<!-- 配置 Spring管理MQ 连接ActiveMQ -->
+		<!-- 连接工厂  此工厂由Apache 提供  -->
+		<bean id="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+			<!-- 连接地址 -->
+			<property name="brokerURL" value="tcp://192.168.200.128:61616"/>
+			<!-- 用户名及密码 -->
+			<property name="userName" value="admin"/>
+			<property name="password" value="admin"/>
+		</bean>
+		<!-- 连接池管理 连接工厂   由Apache提供-->
+		<bean id="pooledConnectionFactoryBean" class="org.apache.activemq.pool.PooledConnectionFactoryBean">
+			<!-- 注入工厂 -->
+			<property name="connectionFactory" ref="activeMQConnectionFactory"/>
+			<!-- 最大连接数 -->
+			<property name="maxConnections" value="2"/>
+		</bean>
+		
+		<!-- 把上面的工厂交由Spring管理   工厂-->
+		<bean id="singleConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+			<!-- 注入上面的工厂 -->
+			<property name="targetConnectionFactory" ref="pooledConnectionFactoryBean"/>
+		</bean>
+		
+		<!-- 使用Spring提供 的jmsTemplate 来操作ActiveMQ  -->
+		<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+			<!-- 注入Spring单例工厂 -->
+			<property name="connectionFactory" ref="singleConnectionFactory"/>
+			<!-- 设置一个默认的操作的目标 -->
+			<property name="defaultDestinationName" value="pId"/>
+			<!-- 默认是队列模式   、可改为主题  、 发布、订阅 模式  publish subject-->
+			<property name="pubSubDomain" value="true"/>
+			
+		</bean>
+		
+</beans>

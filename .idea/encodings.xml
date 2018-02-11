@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-bean" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-console" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-login" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-portal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-service-buyer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-service-cms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-service-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-service-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go-service-solr" charset="UTF-8" />
+  </component>
+</project>

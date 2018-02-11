@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="babasport-common" />
+        <module name="babasport-console" />
+        <module name="babasport-dao" />
+        <module name="babasport-javaBean" />
+        <module name="babasport-login" />
+        <module name="babasport-portal" />
+        <module name="babasport-service-buyer" />
+        <module name="babasport-service-cms" />
+        <module name="babasport-service-interface" />
+        <module name="babasport-service-product" />
+        <module name="babasport-service-solr" />
+        <module name="go-bean" />
+        <module name="go-common" />
+        <module name="go-console" />
+        <module name="go-dao" />
+        <module name="go-login" />
+        <module name="go-portal" />
+        <module name="go-service-buyer" />
+        <module name="go-service-cms" />
+        <module name="go-service-interface" />
+        <module name="go-service-product" />
+        <module name="go-service-solr" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="babasport-common" target="1.7" />
+      <module name="babasport-console" target="1.7" />
+      <module name="babasport-dao" target="1.7" />
+      <module name="babasport-javaBean" target="1.7" />
+      <module name="babasport-login" target="1.7" />
+      <module name="babasport-portal" target="1.7" />
+      <module name="babasport-service-buyer" target="1.7" />
+      <module name="babasport-service-cms" target="1.7" />
+      <module name="babasport-service-interface" target="1.7" />
+      <module name="babasport-service-product" target="1.7" />
+      <module name="babasport-service-solr" target="1.7" />
+      <module name="go-bean" target="1.7" />
+      <module name="go-common" target="1.7" />
+      <module name="go-console" target="1.7" />
+      <module name="go-dao" target="1.7" />
+      <module name="go-login" target="1.7" />
+      <module name="go-portal" target="1.7" />
+      <module name="go-service-buyer" target="1.7" />
+      <module name="go-service-cms" target="1.7" />
+      <module name="go-service-interface" target="1.7" />
+      <module name="go-service-product" target="1.7" />
+      <module name="go-service-solr" target="1.7" />
+      <module name="GoStore" target="1.7" />
+      <module name="parent193" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

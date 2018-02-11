@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="babasport-console:war">
+    <output-path>$PROJECT_DIR$/babasport-console/target</output-path>
+    <root id="archive" name="babasport-console-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="babasport-console:war exploded" />
+    </root>
+  </artifact>
+</component>

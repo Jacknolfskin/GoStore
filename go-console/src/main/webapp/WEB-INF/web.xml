@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<!-- POST过滤器 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<!-- 前端控制器 -->
+	<servlet>
+		<servlet-name>console</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<!-- 默认 WEB-INF/[servlet-name]-servlet.xml -->
+			<param-value>classpath:springmvc-console.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>console</servlet-name>
+		<!-- 
+			/* : 拦截所有请求   .jsp .js.css  几乎不用    配置静态资源过滤 （.jsp .js.css)
+			/  : 拦截所有请求    （不拦截.jsp）  拦截.js.css  配置静态资源过滤 （ .js.css....)  前台系统应用
+			*.do : 拦截.do 请求  后台开发应用  *.do
+		 -->
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,15 @@
+/*jshop header*/
+#navmore{position:absolute;left:175px;top:10px;width:77px;height:23px;overflow:hidden;background-color:#fff;cursor:pointer}
+#navmore dt{border:1px solid #eeeeee;padding-left:9px;height:20px;line-height:20px;}
+#navmore dd{padding-left:9px;height:25px;line-height:25px}
+#navmore dd a{display:block}
+#navmore.hover{height:auto;border:1px solid #eeeeee;}
+#navmore.hover dt{border:none}
+.deco-01{height:0;line-height:0;font-size:0;border:4px solid;border-color:#333 #fff #fff  #fff;position:absolute;margin-top:9px;margin-left:5px;}
+#navmore.hover .deco-01{margin-top:4px;border-color:#fff #fff #333 #fff}
+html* .deco-01{margin-top:4px}
+html* #navmore.hover .deco-01{margin-top:0}
+#logo-2013{z-index:7}
+#search-2013 .button,#search-2013 .button01{font-size:12px;font-weight:normal;width:56px}
+#search-2013 .button01{background-color:#666;color:#fff;height:36px;position:absolute;margin-top:-3px;cursor:pointer}
+#search-2013 .text{width:185px}

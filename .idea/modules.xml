@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GoStore.iml" filepath="$PROJECT_DIR$/GoStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-bean/go-bean.iml" filepath="$PROJECT_DIR$/go-bean/go-bean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-common/go-common.iml" filepath="$PROJECT_DIR$/go-common/go-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-console/go-console.iml" filepath="$PROJECT_DIR$/go-console/go-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-dao/go-dao.iml" filepath="$PROJECT_DIR$/go-dao/go-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-login/go-login.iml" filepath="$PROJECT_DIR$/go-login/go-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-portal/go-portal.iml" filepath="$PROJECT_DIR$/go-portal/go-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-service-buyer/go-service-buyer.iml" filepath="$PROJECT_DIR$/go-service-buyer/go-service-buyer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-service-cms/go-service-cms.iml" filepath="$PROJECT_DIR$/go-service-cms/go-service-cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-service-interface/go-service-interface.iml" filepath="$PROJECT_DIR$/go-service-interface/go-service-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-service-product/go-service-product.iml" filepath="$PROJECT_DIR$/go-service-product/go-service-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-service-solr/go-service-solr.iml" filepath="$PROJECT_DIR$/go-service-solr/go-service-solr.iml" />
+    </modules>
+  </component>
+</project>

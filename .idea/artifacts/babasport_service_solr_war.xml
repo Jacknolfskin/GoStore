@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="babasport-service-solr:war">
+    <output-path>$PROJECT_DIR$/babasport-service-solr/target</output-path>
+    <root id="archive" name="babasport-service-solr-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="babasport-service-solr:war exploded" />
+    </root>
+  </artifact>
+</component>

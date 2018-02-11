@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="cn.zhx.core.dao.product.BrandDao">
+
+	<resultMap type="Brand" id="brand">
+		 <result column="img_url" property="imgUrl"/>
+		 <result column="is_display" property="isDisplay"/>
+	</resultMap>
+	<!-- 查询品牌结果集  List<Brand> -->
+	<select id="selectBrandListByQuery" parameterType="BrandQuery" resultMap="brand">
+		select id ,name,description,img_url,is_display,sort
+		from bbs_brand
+		<where>
+			<if test="name != null">
+				name like "%"#{name}"%"
+			</if>
+			<if test="isDisplay != null">
+				and is_display = #{isDisplay}
+			</if>
+		</where>
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</select>
+	<!--查询符合条件总条数 -->
+	<select id="selectCount" parameterType="BrandQuery" resultType="Integer">
+		select count(1)
+		from bbs_brand
+		<where>
+			<if test="name != null">
+				name like "%"#{name}"%"
+			</if>
+			<if test="isDisplay != null">
+				and is_display = #{isDisplay}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 通过ID查 -->
+	<select id="selectBrandById" parameterType="Long" resultMap="brand">
+		select id ,name,description,img_url,is_display,sort
+		from bbs_brand
+		<where>
+			id = #{id}
+		</where>
+	
+	</select>
+	
+	<update id="updateBrandById" parameterType="Brand">
+		update bbs_brand 
+		<set>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="description != null">
+				description = #{description},
+			</if>
+			<if test="imgUrl != null">
+				img_url = #{imgUrl},
+			</if>
+			<if test="sort != null">
+				sort = #{sort},
+			</if>
+			<if test="isDisplay != null">
+				is_display = #{isDisplay}
+			</if>
+		</set>
+		<where>
+			id = #{id}
+		</where>
+	</update>
+	
+	<!-- 删除 (1,2,3,4)  public void deletes(Long[] ids); List<Long> ids == list  -->
+	<delete id="deletes" parameterType="Long[]">
+		delete from bbs_brand
+		<where>
+			id in 
+			<foreach collection="array" item="id" separator="," open="(" close=")">
+				#{id}
+			</foreach>
+		</where>
+	</delete>
+	
+	
+	
+	
+	
+</mapper>
